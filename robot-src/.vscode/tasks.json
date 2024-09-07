@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "colcon build all",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "statusbar": {
+                    "color": "#6ad622"
+                }
+            },
+            "command": "colcon build --symlink-install --merge-install",
+            "problemMatcher": []
+        },
+        {
+            "label": "colcon clean package",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "statusbar": {
+                    "color": "#d66722"
+                },
+            },
+            "command": "colcon clean packages --packages-select ${input:app_version} -y",
+            "problemMatcher": []
+        },
+    ]
+}

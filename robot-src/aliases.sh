@@ -1,0 +1,1 @@
+alias zenoh="tmuxp load tmux/bridge.yaml"

@@ -1,0 +1,26 @@
+session_name: zenoh
+windows:
+  - window_name: bridge
+    layout: tiled
+    suppress_history: false
+    panes:
+      - shell_command: # 
+          - zenoh-bridge-ros2dds -l udp/0.0.0.0:7447
+  - window_name: pub-sub
+    layout: tiled
+    suppress_history: false
+    panes:
+      - shell_command: # sub
+          - printf '\033]2;sub\033\\'
+          - ros2 run demos sub_demo.py
+      - shell_command: # pub
+          - printf '\033]2;pub\033\\'
+          - ros2 run demos pub_demo.py
+  - window_name: service
+    layout: tiled
+    suppress_history: false
+    panes:
+      - shell_command: # 
+          - printf '\033]2;service\033\\'
+          - ros2 run demos service_demo.py
+  

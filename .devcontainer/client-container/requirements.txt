@@ -1,0 +1,2 @@
+eclipse-zenoh==0.11.0
+pycdr2 == 1.0.0

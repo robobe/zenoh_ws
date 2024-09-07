@@ -1,0 +1,40 @@
+{
+    "name": "zenoh-client",
+    "workspaceFolder": "/workspace/client-src",
+    "dockerComposeFile": ["../../docker-compose.yml"],
+    "service": "client",
+    "shutdownAction": "none",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "albert.tabout",
+                "redhat.vscode-xml",
+                "redhat.vscode-yaml",
+                "ms-python.python",
+                "actboy168.tasks",
+                "streetsidesoftware.code-spell-checker",
+                "ms-python.black-formatter",
+                "ms-python.isort",
+                "rioj7.vscode-file-templates",
+                "rioj7.command-variable",
+                "mhutchie.git-graph",
+                "dlech.chmod"
+            ],
+            "settings": {
+                "remote.autoForwardPorts": false,
+                "[xml]": {
+                    "editor.defaultFormatter": "redhat.vscode-xml"
+                },
+                "files.exclude": {
+                    "**/.git": true,
+                    "**/.svn": true,
+                    "**/.hg": true,
+                    "**/CVS": true,
+                    "**/.DS_Store": true,
+                    "**/Thumbs.db": true,
+                    "**/__pycache__": true
+                }
+            }
+        }
+    }
+}

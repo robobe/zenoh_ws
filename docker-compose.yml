@@ -1,0 +1,36 @@
+version: '3'
+services:
+  robot:
+    build:
+      context: .
+      dockerfile: .devcontainer/robot-container/Dockerfile
+    volumes:
+      # Mount the root folder that contains .git
+      - .:/workspace:cached
+    command: sleep infinity
+    user: user
+    hostname: zenoh
+    privileged: true
+    links:
+      - client
+    networks:
+      - my-network
+    # ...
+
+  client:
+    build:
+      context: .
+      dockerfile: .devcontainer/client-container/Dockerfile
+    volumes:
+      # Mount the root folder that contains .git
+      - .:/workspace:cached
+    command: sleep infinity
+    user: user
+    hostname: client
+    privileged: true
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
